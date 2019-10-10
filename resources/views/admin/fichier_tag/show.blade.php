@@ -1,0 +1,53 @@
+@extends('admin.layouts.app')
+
+@section('page-heading')
+<h2>Fichier Tags</h2>
+<ol class="breadcrumb">
+    <li>
+        <a href="#">Fichier Tags</a>
+    </li>
+    <li>
+        <a href="{{ route('admin.fichier-tag.index') }}">Listes</a>
+    </li>
+    <li class="active">
+        <strong>Détail</strong>
+    </li>
+</ol>
+@endsection
+
+@section('content')
+<div class="row">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Détail Fichier Tag : {{$fichierTag->fichier_id}}</h5>
+            </div>
+            <div class="ibox-content">
+                <ul class="list-group">
+                                        <li class="list-group-item">
+                        <h4>Id</h4>
+                        <h5>{{$fichierTag->id}}</h5>
+                    </li>
+                                        <li class="list-group-item">
+                        <h4>Fichier Id</h4>
+                        <h5>{{$fichierTag->fichier_id}}</h5>
+                    </li>
+                                        <li class="list-group-item">
+                        <h4>Tag Id</h4>
+                        <h5>{{$fichierTag->tag_id}}</h5>
+                    </li>
+                                        <li class="list-group-item">
+                        <h4>Created At</h4>
+                        <h5>{{$fichierTag->created_at}}</h5>
+                    </li>
+                                        <li class="list-group-item">
+                        <h4>Updated At</h4>
+                        <h5>{{$fichierTag->updated_at}}</h5>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@endsection

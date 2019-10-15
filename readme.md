@@ -1,6 +1,6 @@
 # Dago share
 
-Site qui permet de partager des fichiers, documents, tutoriels entre des particuliers pour les particuliers
+Dago Share est un site qui permet de partager des fichiers, documents, tutoriels entre des particuliers pour les particuliers
 
 ## Commencer
 
@@ -41,10 +41,10 @@ Ensuite, copiez le lien qui se trouve dans la ligne de commande et coller les da
 
 ## Les technologies qui sont utilisées
 
-* [Laravel](http://www.dropwizard.io/1.0.2/docs/) - Le framework web utilisé
-* [Composer](https://maven.apache.org/) - Gestion des dépendances
-* [Bootstrap](https://maven.apache.org/) - Le framework css utilisé
-* [Jquery](https://rometools.github.io/rome/) - Le librairie javascript utilisé
+* [Laravel](https://laravel.com/) - Le framework web utilisé
+* [Composer](https://getcomposer.org/) - Gestion des dépendances
+* [Bootstrap](https://getbootstrap.com/) - Le framework css utilisé
+* [Jquery](https://jquery.com/) - Le librairie javascript utilisé
 
 
 ## Auteurs
@@ -59,7 +59,6 @@ Ce projet est sous licence MIT - voir le fichier [LICENSE.md] (LICENSE.md) pour 
 
 ## Remerciements
 
-* Astuce de chapeau à toute personne dont le code a été utilisé
 * Je remercie profondément les personnes qui ont contribuées à la réalisation de ce projet
-* Merci aux team Agnaro Webcompany
+* Merci aux team Agnaro Webcompany aussi ;)
 

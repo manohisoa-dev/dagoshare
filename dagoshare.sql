@@ -169,18 +169,35 @@ CREATE TABLE `demandes` (
 
 /*Data for the table `demandes` */
 
+/*Table structure for table `extensions` */
+
+DROP TABLE IF EXISTS `extensions`;
+
+CREATE TABLE `extensions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `libelle` varchar(200) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+/*Data for the table `extensions` */
+
+insert  into `extensions`(`id`,`libelle`,`created_at`,`updated_at`) values (1,'zip','2019-10-15 04:15:44','2019-10-15 04:15:44'),(2,'rar','2019-10-15 04:15:49','2019-10-15 04:15:49'),(3,'iso','2019-10-15 04:15:55','2019-10-15 04:15:55'),(4,'mdf','2019-10-15 04:16:22','2019-10-15 04:16:22'),(5,'mp4','2019-10-15 04:16:29','2019-10-15 04:16:29'),(6,'mp3','2019-10-15 04:16:40','2019-10-15 04:16:40'),(7,'pdf','2019-10-15 04:16:45','2019-10-15 04:16:45'),(8,'doc','2019-10-15 04:16:53','2019-10-15 04:16:53'),(9,'docx','2019-10-15 04:17:01','2019-10-15 04:17:01');
+
 /*Table structure for table `fichier_liens` */
 
 DROP TABLE IF EXISTS `fichier_liens`;
 
 CREATE TABLE `fichier_liens` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titre` varchar(200) DEFAULT NULL,
   `fichier_id` int(11) NOT NULL,
   `qualite_id` int(11) DEFAULT NULL,
   `lien` varchar(255) NOT NULL,
-  `hebergeur` varchar(200) DEFAULT NULL,
+  `hebergeur_id` int(11) DEFAULT NULL,
   `langue_id` int(11) NOT NULL,
-  `extension` varchar(10) DEFAULT NULL,
+  `extension` int(11) DEFAULT NULL,
   `taille` varchar(60) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -283,6 +300,22 @@ CREATE TABLE `fonctions` (
 
 insert  into `fonctions`(`id`,`libelle`,`created_at`,`updated_at`) values (1,'Résponsable Marketing','2019-09-24 18:36:02','2019-09-24 18:36:02'),(2,'Modérateur','2019-09-24 18:36:12','2019-09-24 18:36:12'),(3,'Développeur','2019-09-29 06:38:18','2019-09-29 06:38:18'),(4,'Graphiste','2019-09-29 06:38:34','2019-09-29 06:38:34');
 
+/*Table structure for table `hebergeurs` */
+
+DROP TABLE IF EXISTS `hebergeurs`;
+
+CREATE TABLE `hebergeurs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `libelle` varchar(200) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+/*Data for the table `hebergeurs` */
+
+insert  into `hebergeurs`(`id`,`libelle`,`created_at`,`updated_at`) values (1,'Google Drive','2019-10-15 04:14:48','2019-10-15 04:14:48'),(2,'Dropbox','2019-10-15 04:14:56','2019-10-15 04:14:56'),(3,'Weetransfert','2019-10-15 04:15:04','2019-10-15 04:15:04'),(4,'Uptobox','2019-10-15 04:15:10','2019-10-15 04:15:10'),(5,'1fichier','2019-10-15 04:15:15','2019-10-15 04:15:15'),(6,'Rapidgator','2019-10-15 04:15:23','2019-10-15 04:15:23'),(7,'Uploaded','2019-10-15 04:15:30','2019-10-15 04:15:30');
+
 /*Table structure for table `langues` */
 
 DROP TABLE IF EXISTS `langues`;
@@ -352,11 +385,11 @@ CREATE TABLE `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 /*Data for the table `migrations` */
 
-insert  into `migrations`(`id`,`migration`,`batch`) values (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_07_16_154349_create_mediable_tables',1),(4,'2019_09_21_174057_create_aides',2),(5,'2019_09_21_201240_create_table_qualites',3),(6,'2019_09_21_211757_create_table_actualites',3),(7,'2019_09_21_211814_create_table_categories',3),(8,'2019_09_21_211841_create_table_commentaire_evaluations',3),(9,'2019_09_21_211857_create_table_commentaires',3),(10,'2019_09_21_211913_create_table_demandes',3),(11,'2019_09_21_211939_create_table_fichier_liens',3),(12,'2019_09_21_212010_create_table_fichier_telechargements',3),(13,'2019_09_21_212029_create_table_fichier_types',3),(14,'2019_09_21_212040_create_table_fichiers',3),(15,'2019_09_21_212057_create_table_fonctions',3),(16,'2019_09_21_212112_create_table_langues',3),(17,'2019_09_21_212141_create_table_pages',3),(18,'2019_09_21_212205_create_table_personnels',3),(19,'2019_09_21_212244_create_table_regle_generales',3),(20,'2019_09_21_212259_create_table_regle_types',3),(21,'2019_09_21_212325_create_table_sous_categories',3),(22,'2019_09_21_212341_create_table_tags',3),(23,'2019_09_24_203957_create_bugs',4),(24,'2019_09_24_204023_create_bug_types',4),(25,'2019_09_25_045649_create_bug_resolutions',5),(26,'2019_09_26_124623_create_permission_tables',6),(27,'2019_09_29_064413_timestamp_priorites',6),(28,'2019_09_29_064449_timestamp_todos',6),(29,'2019_10_01_025320_create_fichier_tags',7);
+insert  into `migrations`(`id`,`migration`,`batch`) values (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_07_16_154349_create_mediable_tables',1),(4,'2019_09_21_174057_create_aides',2),(5,'2019_09_21_201240_create_table_qualites',3),(6,'2019_09_21_211757_create_table_actualites',3),(7,'2019_09_21_211814_create_table_categories',3),(8,'2019_09_21_211841_create_table_commentaire_evaluations',3),(9,'2019_09_21_211857_create_table_commentaires',3),(10,'2019_09_21_211913_create_table_demandes',3),(11,'2019_09_21_211939_create_table_fichier_liens',3),(12,'2019_09_21_212010_create_table_fichier_telechargements',3),(13,'2019_09_21_212029_create_table_fichier_types',3),(14,'2019_09_21_212040_create_table_fichiers',3),(15,'2019_09_21_212057_create_table_fonctions',3),(16,'2019_09_21_212112_create_table_langues',3),(17,'2019_09_21_212141_create_table_pages',3),(18,'2019_09_21_212205_create_table_personnels',3),(19,'2019_09_21_212244_create_table_regle_generales',3),(20,'2019_09_21_212259_create_table_regle_types',3),(21,'2019_09_21_212325_create_table_sous_categories',3),(22,'2019_09_21_212341_create_table_tags',3),(23,'2019_09_24_203957_create_bugs',4),(24,'2019_09_24_204023_create_bug_types',4),(25,'2019_09_25_045649_create_bug_resolutions',5),(26,'2019_09_26_124623_create_permission_tables',6),(27,'2019_09_29_064413_timestamp_priorites',6),(28,'2019_09_29_064449_timestamp_todos',6),(29,'2019_10_01_025320_create_fichier_tags',7),(30,'2019_10_15_040644_timestamp_hebergeur',8),(31,'2019_10_15_040714_timestamp_extension',8);
 
 /*Table structure for table `model_has_permissions` */
 

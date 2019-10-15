@@ -32,6 +32,11 @@ class Todo extends Model {
             \Request::input("sort") and $query->orderBy(\Request::input("sort"),\Request::input("sortType","asc"));
         }
 
+        if(!\Request::input("statut")){
+            $query->where('statut', 'en_attente');
+        }else{
+            $query->where('statut',\Request::input('statut'));
+        }
         // paginate results
         return $query->paginate(Config::get('constants.perpage.admin'));
     }

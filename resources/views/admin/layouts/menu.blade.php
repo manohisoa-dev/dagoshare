@@ -1,12 +1,14 @@
 <li class="{{Request::is('home') ? 'active' : ''}}">
-    <a href="{{route('home')}}"><i class="fa fa-dashboard"></i> <span class="nav-label">Tableau de Bord</span></a>
+    <a href="{{route('home')}}" title="Tableau de Bord"><i class="fa fa-dashboard"></i> <span class="nav-label">Tableau de Bord</span></a>
 </li>
 
 <li class="{{
     Request::is('admin/fichier') || Request::is('admin/fichier/*')  ? 'active' : '' ||
     Request::is('admin/fichier-type') || Request::is('admin/fichier-type/*')  ? 'active' : '' ||
     Request::is('admin/qualite') || Request::is('admin/qualite/*')  ? 'active' : '' ||
-    Request::is('admin/tag') || Request::is('admin/tag/*')  ? 'active' : ''
+    Request::is('admin/tag') || Request::is('admin/tag/*')  ? 'active' : '' ||
+    Request::is('admin/hebergeur') || Request::is('admin/hebergeur/*')  ? 'active' : '' ||
+    Request::is('admin/extension') || Request::is('admin/extension/*')  ? 'active' : ''
 }}">
     <a href="#"><i class="fa fa-file-o"></i><span class="nav-label">Fichiers</span> <span class="fa arrow"></span></a>
     <ul class="nav nav-second-level collapse">
@@ -14,6 +16,8 @@
         <li><a href="{{route('admin.fichier-type.index')}}">Types</a></li>
         <li><a href="{{route('admin.qualite.index')}}">Qualités</a></li>
         <li><a href="{{route('admin.tag.index')}}">Tags</a></li>
+        <li><a href="{{route('admin.hebergeur.index')}}">Hebergeurs</a></li>
+        <li><a href="{{route('admin.extension.index')}}">Extensions</a></li>
     </ul>
 </li>
 
@@ -29,7 +33,7 @@
 </li>
 
 <li class="{{Request::is('admin/demande') || Request::is('admin/demande/*')  ? 'active' : ''}}">
-    <a href="{{route('admin.demande.index')}}"><i class="fa fa-bookmark"></i> <span class="nav-label">Demandes</span> </a>
+    <a href="{{route('admin.demande.index')}}" title="Demandes"><i class="fa fa-bookmark"></i> <span class="nav-label">Demandes</span> </a>
 </li>
 
 <li class="{{
@@ -77,9 +81,9 @@
 </li>
 
 <li class="special_link">
-    <a href="{{route('admin.fichier.create')}}"><i class="fa fa-cloud-upload"></i> <span class="nav-label">Ajouter un fichier</span></a>
+    <a href="{{route('admin.fichier.create')}}" title="Ajouter un fichier"><i class="fa fa-cloud-upload"></i> <span class="nav-label">Ajouter un fichier</span></a>
 </li>
 
 <li class="bug_link">
-    <a href="{{route('admin.bug.create')}}"><i class="fa fa-bug"></i> <span class="nav-label">Reporter un bug</span></a>
+    <a href="{{route('admin.bug.create')}}" title="Reporter un bug"><i class="fa fa-bug"></i> <span class="nav-label">Reporter un bug</span></a>
 </li>

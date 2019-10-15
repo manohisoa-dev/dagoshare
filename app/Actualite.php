@@ -11,7 +11,7 @@ class Actualite extends Model {
 
     public static function findRequested()
     {
-        $query = Actualite::query(); 
+        $query = Actualite::query();
 
         // search results based on user input
         \Request::input('id') and $query->where('id',\Request::input('id'));

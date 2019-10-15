@@ -289,15 +289,15 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
 }
 .navbar-default .special_link a {
   background: #1ab394;
-  color: white;
+  color: white !important;
 }
 .navbar-default .special_link a:hover {
   background: #17987e !important;
-  color: white;
+  color: white !important;
 }
 .navbar-default .special_link a span.label {
   background: #fff;
-  color: #1ab394;
+  color: #1ab394 !important;
 }
 .navbar-default .landing_link a {
   background: #1cc09f;
@@ -312,16 +312,16 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
   color: #1cc09f;
 }
 .navbar-default .bug_link a {
-  background: #ed5565;
-  color: white;
+  background: #ed5565 !important;
+  color: white !important;
 }
 .navbar-default .bug_link a:hover {
   background: #ed5555 !important;
-  color: white;
+  color: white !important;
 }
 .navbar-default .bug_link a span.label {
-  background: #fff;
-  color: #ed5565;
+  background: #fff !important;
+  color: #ed5565 !important;
 }
 .logo-element {
   text-align: center;
@@ -1781,7 +1781,8 @@ div.dt-button-info {
   display: none;
 }
 .pace .pace-progress {
-  background: #1ab394;
+  /*background: #1ab394;*/
+  background: #0e9aef;
   position: fixed;
   z-index: 2040;
   top: 0;
@@ -7796,6 +7797,10 @@ body.rtls.top-navigation .footer.fixed {
 .skin-1 .nav > li > a {
   color: #9ea6b9;
 }
+.skin-1 .nav > li .special_link > a {
+  color: #fff !important;
+}
+
 .skin-1 ul.nav-second-level {
   background-color: inherit;
 }

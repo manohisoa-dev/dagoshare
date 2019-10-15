@@ -37,8 +37,8 @@
                         {!!\Nvd\Crud\Html::sortableTh('description','admin.todo.index','Description')!!}
                         {!!\Nvd\Crud\Html::sortableTh('statut','admin.todo.index','Statut')!!}
                         {!!\Nvd\Crud\Html::sortableTh('fait_le','admin.todo.index','Fait Le')!!}
-                        {!!\Nvd\Crud\Html::sortableTh('created_at','admin.todo.index','Created At')!!}
-                        {!!\Nvd\Crud\Html::sortableTh('updated_at','admin.todo.index','Updated At')!!}
+                        {!!\Nvd\Crud\Html::sortableTh('created_at','admin.todo.index','Créer le')!!}
+                        {!!\Nvd\Crud\Html::sortableTh('updated_at','admin.todo.index','Mise à jour le')!!}
                         <th></th>
                     </tr>
                     <tr class="search-row">

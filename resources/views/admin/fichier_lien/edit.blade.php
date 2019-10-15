@@ -20,7 +20,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Mise à jour Fichier Lien : {{$fichierLien->fichier_id}}</h5>
+                <h5>Mise à jour Fichier Lien : {{$fichierLien->titre}}</h5>
             </div>
             <div class="ibox-content">
                 <form action="{{ route('admin.fichier-lien.index')}}/{{$fichierLien->id}}" method="post">
@@ -29,13 +29,15 @@
 
                     {{ method_field("PUT") }}
                                                                                                 
+                            {!! \Nvd\Crud\Form::input('titre','text')->model($fichierLien)->show() !!}
+                                                                        
                             {!! \Nvd\Crud\Form::input('fichier_id','text')->model($fichierLien)->show() !!}
                                                                         
                             {!! \Nvd\Crud\Form::input('qualite_id','text')->model($fichierLien)->show() !!}
                                                                         
                             {!! \Nvd\Crud\Form::input('lien','text')->model($fichierLien)->show() !!}
                                                                         
-                            {!! \Nvd\Crud\Form::input('hebergeur','text')->model($fichierLien)->show() !!}
+                            {!! \Nvd\Crud\Form::input('hebergeur_id','text')->model($fichierLien)->show() !!}
                                                                         
                             {!! \Nvd\Crud\Form::input('langue_id','text')->model($fichierLien)->show() !!}
                                                                         

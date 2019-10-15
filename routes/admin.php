@@ -14,6 +14,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     Route::resource('fichier-telechargement','FichierTelechargementController');
     Route::resource('fichier-type','FichierTypeController');
     Route::resource('fichier-tag','FichierTagController');
+    Route::resource('hebergeur','HebergeurController');
+    Route::resource('extension','ExtensionController');
 
     Route::resource('fonction','FonctionController');
     Route::resource('langue','LangueController');

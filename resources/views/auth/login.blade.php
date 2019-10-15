@@ -41,14 +41,14 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary block full-width m-b">S'identifier</button>
+        <button type="submit" class="btn btn-primary block full-width m-b">{{ __('S\'identifier') }}</button>
 
         @if (Route::has('password.request'))
             <a  href="{{ route('password.request') }}">
                 <small>{{ __('Mot de passe oublié?') }}</small>
             </a>
         @endif
-        <p class="text-muted text-center"><small>Vous n'avez pas de compte?</small></p>
-        <a class="btn btn-sm btn-white btn-block" href="{{route('register')}}">Créer un compte</a>
+        <p class="text-muted text-center"><small>{{ __('Vous n\'avez pas de compte?') }}</small></p>
+        <a class="btn btn-sm btn-white btn-block" href="{{route('register')}}">{{ __('Créer un compte') }}</a>
     </form>
 @endsection

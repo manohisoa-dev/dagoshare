@@ -15,12 +15,13 @@ class FichierLien extends Model {
 
         // search results based on user input
         \Request::input('id') and $query->where('id',\Request::input('id'));
+        \Request::input('titre') and $query->where('titre','like','%'.\Request::input('titre').'%');
         \Request::input('fichier_id') and $query->where('fichier_id',\Request::input('fichier_id'));
         \Request::input('qualite_id') and $query->where('qualite_id',\Request::input('qualite_id'));
         \Request::input('lien') and $query->where('lien','like','%'.\Request::input('lien').'%');
-        \Request::input('hebergeur') and $query->where('hebergeur','like','%'.\Request::input('hebergeur').'%');
+        \Request::input('hebergeur_id') and $query->where('hebergeur_id',\Request::input('hebergeur_id'));
         \Request::input('langue_id') and $query->where('langue_id',\Request::input('langue_id'));
-        \Request::input('extension') and $query->where('extension','like','%'.\Request::input('extension').'%');
+        \Request::input('extension') and $query->where('extension',\Request::input('extension'));
         \Request::input('taille') and $query->where('taille','like','%'.\Request::input('taille').'%');
         \Request::input('created_at') and $query->where('created_at',\Request::input('created_at'));
         \Request::input('updated_at') and $query->where('updated_at',\Request::input('updated_at'));
@@ -35,12 +36,13 @@ class FichierLien extends Model {
     public static function validationRules( $attributes = null )
     {
         $rules = [
+            'titre' => 'string|max:200',
             'fichier_id' => 'required|integer',
             'qualite_id' => 'integer',
             'lien' => 'required|string|max:255',
-            'hebergeur' => 'string|max:200',
+            'hebergeur_id' => 'integer',
             'langue_id' => 'required|integer',
-            'extension' => 'string|max:10',
+            'extension' => 'integer',
             'taille' => 'required|string|max:60',
         ];
 

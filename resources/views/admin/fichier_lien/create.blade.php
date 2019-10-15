@@ -27,13 +27,15 @@
 
                     {{ csrf_field() }}
                                                         
+                    {!! \Nvd\Crud\Form::input('titre','text')->show() !!}
+                                            
                     {!! \Nvd\Crud\Form::input('fichier_id','text')->show() !!}
                                             
                     {!! \Nvd\Crud\Form::input('qualite_id','text')->show() !!}
                                             
                     {!! \Nvd\Crud\Form::input('lien','text')->show() !!}
                                             
-                    {!! \Nvd\Crud\Form::input('hebergeur','text')->show() !!}
+                    {!! \Nvd\Crud\Form::input('hebergeur_id','text')->show() !!}
                                             
                     {!! \Nvd\Crud\Form::input('langue_id','text')->show() !!}
                                             

@@ -32,24 +32,26 @@
                 <thead>
                     <tr class="header-row">
                                                     {!!\Nvd\Crud\Html::sortableTh('id','admin.fichier-lien.index','Id')!!}
+                                                    {!!\Nvd\Crud\Html::sortableTh('titre','admin.fichier-lien.index','Titre')!!}
                                                     {!!\Nvd\Crud\Html::sortableTh('fichier_id','admin.fichier-lien.index','Fichier Id')!!}
                                                     {!!\Nvd\Crud\Html::sortableTh('qualite_id','admin.fichier-lien.index','Qualite Id')!!}
                                                     {!!\Nvd\Crud\Html::sortableTh('lien','admin.fichier-lien.index','Lien')!!}
-                                                    {!!\Nvd\Crud\Html::sortableTh('hebergeur','admin.fichier-lien.index','Hebergeur')!!}
+                                                    {!!\Nvd\Crud\Html::sortableTh('hebergeur_id','admin.fichier-lien.index','Hebergeur Id')!!}
                                                     {!!\Nvd\Crud\Html::sortableTh('langue_id','admin.fichier-lien.index','Langue Id')!!}
                                                     {!!\Nvd\Crud\Html::sortableTh('extension','admin.fichier-lien.index','Extension')!!}
                                                     {!!\Nvd\Crud\Html::sortableTh('taille','admin.fichier-lien.index','Taille')!!}
-                                                    {!!\Nvd\Crud\Html::sortableTh('created_at','admin.fichier-lien.index','Créer le')!!}
-                                                    {!!\Nvd\Crud\Html::sortableTh('updated_at','admin.fichier-lien.index','Mis à jour le')!!}
+                                                    {!!\Nvd\Crud\Html::sortableTh('created_at','admin.fichier-lien.index','Created At')!!}
+                                                    {!!\Nvd\Crud\Html::sortableTh('updated_at','admin.fichier-lien.index','Updated At')!!}
                                             <th></th>
                     </tr>
                     <tr class="search-row">
                         <form class="search-form">
                                                             <td><input type="text" class="form-control" name="id" value="{{Request::input("id")}}"></td>
+                                                            <td><input type="text" class="form-control" name="titre" value="{{Request::input("titre")}}"></td>
                                                             <td><input type="text" class="form-control" name="fichier_id" value="{{Request::input("fichier_id")}}"></td>
                                                             <td><input type="text" class="form-control" name="qualite_id" value="{{Request::input("qualite_id")}}"></td>
                                                             <td><input type="text" class="form-control" name="lien" value="{{Request::input("lien")}}"></td>
-                                                            <td><input type="text" class="form-control" name="hebergeur" value="{{Request::input("hebergeur")}}"></td>
+                                                            <td><input type="text" class="form-control" name="hebergeur_id" value="{{Request::input("hebergeur_id")}}"></td>
                                                             <td><input type="text" class="form-control" name="langue_id" value="{{Request::input("langue_id")}}"></td>
                                                             <td><input type="text" class="form-control" name="extension" value="{{Request::input("extension")}}"></td>
                                                             <td><input type="text" class="form-control" name="taille" value="{{Request::input("taille")}}"></td>
@@ -65,6 +67,15 @@
                             <tr>
                                                                 <td>
                                                                             {{ $record->id }}
+                                                                    </td>
+                                                                <td>
+                                                                        <span class="editable"
+                                          data-type="text"
+                                          data-name="titre"
+                                          data-value="{{ $record->titre }}"
+                                          data-pk="{{ $record->{$record->getKeyName()} }}"
+                                          data-url="{{ route('admin.fichier-lien.index')}}/{{ $record->{$record->getKeyName()} }}"
+                                          >{{ $record->titre }}</span>
                                                                     </td>
                                                                 <td>
                                                                         <span class="editable"
@@ -95,12 +106,12 @@
                                                                     </td>
                                                                 <td>
                                                                         <span class="editable"
-                                          data-type="text"
-                                          data-name="hebergeur"
-                                          data-value="{{ $record->hebergeur }}"
+                                          data-type="number"
+                                          data-name="hebergeur_id"
+                                          data-value="{{ $record->hebergeur_id }}"
                                           data-pk="{{ $record->{$record->getKeyName()} }}"
                                           data-url="{{ route('admin.fichier-lien.index')}}/{{ $record->{$record->getKeyName()} }}"
-                                          >{{ $record->hebergeur }}</span>
+                                          >{{ $record->hebergeur_id }}</span>
                                                                     </td>
                                                                 <td>
                                                                         <span class="editable"
@@ -113,7 +124,7 @@
                                                                     </td>
                                                                 <td>
                                                                         <span class="editable"
-                                          data-type="text"
+                                          data-type="number"
                                           data-name="extension"
                                           data-value="{{ $record->extension }}"
                                           data-pk="{{ $record->{$record->getKeyName()} }}"
@@ -138,7 +149,7 @@
                                                                 @include( 'vendor.crud.single-page-templates.common.actions', [ 'url' => route('admin.fichier-lien.index'), 'record' => $record ] )
                             </tr>
                         @empty
-                            @include ('vendor.crud.single-page-templates.common.not-found-tr',['colspan' => 11])
+                            @include ('vendor.crud.single-page-templates.common.not-found-tr',['colspan' => 12])
                         @endforelse
                     </tbody>
 

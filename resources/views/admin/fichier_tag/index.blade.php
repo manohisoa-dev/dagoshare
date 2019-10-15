@@ -34,8 +34,8 @@
                                                     {!!\Nvd\Crud\Html::sortableTh('id','admin.fichier-tag.index','Id')!!}
                                                     {!!\Nvd\Crud\Html::sortableTh('fichier_id','admin.fichier-tag.index','Fichier Id')!!}
                                                     {!!\Nvd\Crud\Html::sortableTh('tag_id','admin.fichier-tag.index','Tag Id')!!}
-                                                    {!!\Nvd\Crud\Html::sortableTh('created_at','admin.fichier-tag.index','Created At')!!}
-                                                    {!!\Nvd\Crud\Html::sortableTh('updated_at','admin.fichier-tag.index','Updated At')!!}
+                                                    {!!\Nvd\Crud\Html::sortableTh('created_at','admin.fichier-tag.index','Créer le')!!}
+                                                    {!!\Nvd\Crud\Html::sortableTh('updated_at','admin.fichier-tag.index','Mise à jour le')!!}
                                             <th></th>
                     </tr>
                     <tr class="search-row">
